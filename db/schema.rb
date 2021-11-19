@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 2021_11_19_221403) do
   create_table "links", force: :cascade do |t|
     t.string "external_url"
     t.string "title"
-    t.integer "visits_count"
+    t.integer "visits_count", default: 0
     t.string "short_key"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["short_key"], name: "index_links_on_short_key"
   end
 
 end
