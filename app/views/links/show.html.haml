@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b External url:
+  = @link.external_url
+%p
+  %b Title:
+  = @link.title
+%p
+  %b Visits count:
+  = @link.visits_count
+
+= link_to 'Edit', edit_link_path(@link)
+\|
+= link_to 'Back', links_path
