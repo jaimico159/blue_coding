@@ -7,7 +7,9 @@ class LinksController < ApplicationController
   end
 
   # GET /links/1 or /links/1.json
-  def show; end
+  def show
+    @short_url = @link.short_url(request)
+  end
 
   # GET /links/new
   def new
