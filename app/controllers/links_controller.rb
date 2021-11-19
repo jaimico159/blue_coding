@@ -19,6 +19,16 @@ class LinksController < ApplicationController
   # GET /links/1/edit
   def edit; end
 
+  def redirect_to_external_url
+    key = params[:short_key]
+    link = Link.find_by(short_key: key)
+    if link.update(visits_count: link.visits_count + 1)
+      redirect_to link.external_url
+    else
+      redirect_to new_link_path, alert: 'Something went wrong'
+    end
+  end
+
   # POST /links or /links.json
   def create
     @link = Link.new(link_params)
