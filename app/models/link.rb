@@ -9,8 +9,7 @@ class Link < ApplicationRecord
   private
 
   def generate_short_key
-    short_key = bijective_encode(id)
-    save
+    update(short_key: bijective_encode(id))
   end
 
   def bijective_encode(i)
