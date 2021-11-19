@@ -2,12 +2,15 @@ class Link < ApplicationRecord
   ALPHABET =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split(//)
 
-  after :generate_short_key
+  validates :external_url, url: { allow_blank: true }
+
+  after_create :generate_short_key
 
   private
 
   def generate_short_key
     short_key = bijective_encode(id)
+    save
   end
 
   def bijective_encode(i)
