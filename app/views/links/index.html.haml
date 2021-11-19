@@ -6,6 +6,7 @@
       %th External url
       %th Title
       %th Visits count
+      %th Short key
       %th
       %th
       %th
@@ -16,6 +17,7 @@
         %td= link.external_url
         %td= link.title
         %td= link.visits_count
+        %td= link.short_key
         %td= link_to 'Show', link
         %td= link_to 'Edit', edit_link_path(link)
         %td= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }

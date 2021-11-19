@@ -5,7 +5,8 @@ RSpec.describe "links/edit", type: :view do
     @link = assign(:link, Link.create!(
       external_url: "MyString",
       title: "MyString",
-      visits_count: 1
+      visits_count: 1,
+      short_key: "MyString"
     ))
   end
 
@@ -19,6 +20,8 @@ RSpec.describe "links/edit", type: :view do
       assert_select "input[name=?]", "link[title]"
 
       assert_select "input[name=?]", "link[visits_count]"
+
+      assert_select "input[name=?]", "link[short_key]"
     end
   end
 end

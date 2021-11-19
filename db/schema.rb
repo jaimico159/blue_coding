@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_19_221403) do
     t.string "external_url"
     t.string "title"
     t.integer "visits_count"
+    t.string "short_key"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
