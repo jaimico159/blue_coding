@@ -6,6 +6,10 @@ class Link < ApplicationRecord
 
   after_create :generate_short_key
 
+  def short_url(request)
+    "#{request.base_url}/#{short_key}"
+  end
+
   private
 
   def generate_short_key
