@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+500.times do |i|
+  Link.create!({
+                 title: "Title#{i}",
+                 external_url: Faker::Internet.url(scheme: 'https'),
+                 visits_count: rand(1000)
+               })
+end
