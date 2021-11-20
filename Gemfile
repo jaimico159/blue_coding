@@ -29,12 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "haml-rails", "~> 2.0"
 gem "validate_url"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 end
 
